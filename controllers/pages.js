@@ -3,11 +3,12 @@ const path = require("path")
 
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
-  }
+}
 
 module.exports.home = (req, res) => {
     //let ip = req.socket.remoteAddress === "::1" ? "0.0.0.0" : req.socket.remoteAddress
-    let ip = "192.168.44.38"
+    //let ip = "192.168.0.1"
+    let ip = req.headers['x-real-ip']
     let network = ip.match(/\d*\.\d*\.\d*/)[0]
     let branch = config.branches.filter(branch => {
         let res = branch.network.includes(network)
