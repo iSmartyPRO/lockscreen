@@ -3,6 +3,12 @@ module.exports = {
     APP_NAME: "Lock Screen",
     APP_URL: "http://localhost:9098",
     LockScreenSource: "C:\\Windows\\System32",
+    excludeComputers: [
+        {
+            username: "Ilias.Aidar",
+            computername: "PC-038"
+        }
+    ],
     branches: [
         {
             name: "Public",
